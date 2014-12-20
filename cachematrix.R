@@ -1,7 +1,10 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## The first function, makeVector creates a matrix
+##gets the matrix
+##caches the inverse
+##and gets the inverse
 
 makeCacheMatrix <- function(x = matrix()) {
      m <- NULL
@@ -25,13 +28,13 @@ getInv <- function(){
 
 ## Calculates the inverse of a matrix created by makeCacheMatrix
 
-cacheSolve <- function(x, ...) {
-     Inv <- x$getInv
+cacheSolve <- function(a, ...) {
+     Inv <- a$getInv
      if(!is.null(Inv)) {
           message("getting cached data")
      }
-     data <- x$getMatrix()
+     data <- a$getMatrix()
      Inv <- solve(data, ...)
-     x$cacheInv(Inv)
+     a$cacheInv(Inv)
      Inv
 }
